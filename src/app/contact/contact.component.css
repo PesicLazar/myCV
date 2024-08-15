@@ -1,0 +1,43 @@
+.card-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-card{
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
+    border-radius: 8px;
+    text-align: center;
+    width: 1000px;
+}
+.head-card-title{
+    color: #ffffff;
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+.head-card-text{  
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 20px;}
+.email{
+    font-weight: bold;
+    color: #00ff00;}
+
+.other-cards{
+    padding: 40px;
+    margin: 20px;
+    box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+}
+
+.mat-list-item {
+    margin-top: 20px;
+    padding: 20px; 
+    border: 2px solid black;
+}

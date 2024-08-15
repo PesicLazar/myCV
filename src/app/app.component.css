@@ -1,0 +1,4 @@
+.canvas{
+    background-color:  rgb(80, 116, 141);
+    min-height: 100vh; /* becasue portfolio components wasnt fully covered */
+}

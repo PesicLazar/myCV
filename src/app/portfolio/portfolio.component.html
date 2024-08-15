@@ -1,0 +1,22 @@
+<div>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title  class="filter-txt">Filters</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-chip-set class="filter-chips">
+        <mat-chip-option
+          *ngFor="let tag of tags"
+          [style.background-color]="tag.color"
+          [selected]="isSelected(tag)"
+          (click)="toggleSelection(tag)"
+          >{{ tag.toString() }}</mat-chip-option
+        >
+      </mat-chip-set>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div *ngFor="let project of filteredProjects">
+  <app-project-card [project]="project"></app-project-card>
+</div>

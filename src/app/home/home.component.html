@@ -1,0 +1,30 @@
+<div>
+  <!-- about me -->
+  <div class="container" fxLayout="column" fxLayoutAlign="center center">
+    <h1 class="about-me">About Me</h1>
+    <div>
+      <img
+        src="../assets/profile.jpeg"
+        class="profile-pic"
+        alt="profile picture"
+      />
+      <h4 fxFlex="1 1 auto" class="about-text">
+        Hello! my name is Lazar Pešić, a passionate software engineer currently
+        finishing my final thesis in Software and Data Engineering at Singidunum
+        University in Belgrade. With a strong academic foundation in Computer
+        Vision, Artificial Intelligence, and Cloud Computing, I am well-versed
+        in both theoretical and practical aspects of software development.
+        Throughout my studies, I have developed a robust skill set that includes
+        Python, SQL, Angular, MongoDB, and Unity.
+      </h4>
+    </div>
+  </div>
+  <h3 class="about-me" fxLayoutAlign="center center">Some Projects</h3>
+  <mat-tab-group class="container-project-nav">
+    <mat-tab *ngFor="let project of featuredProjects; let i = index" [label]="project?.name || 'Project ' + (i + 1)">
+      <div class="box-container">
+        <app-project-card [project]="project"></app-project-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

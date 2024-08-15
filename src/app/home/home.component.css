@@ -1,0 +1,55 @@
+.container{
+    /* background-color: rgba(111, 241, 122, 0.308); */
+    background-image: url('https://png.pngtree.com/background/20230617/original/pngtree-iridescent-blue-metallic-texture-a-geometric-crystallized-wallpaper-featuring-abstract-faceted-picture-image_3705675.jpg');
+}
+.about-me{
+    background-color: rgba(0, 149, 255, 0.397);
+    color: azure;
+    margin: 0;
+}
+
+.profile-pic{
+    height: 256px;
+    width: 256px;
+    object-fit: cover; /* Maintain aspect ratio */
+    border: 5px solid #00b7ff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    clip-path: polygon(
+        30% 0%, 70% 0%, /* top side */
+        100% 30%, 100% 70%, /* right side */
+        70% 100%, 30% 100%, /* bottom side */
+        0% 70%, 0% 30% /* left side */
+    ); /* Octagon shape */
+    margin-right: 20px;
+}
+.about-text{
+    background-color: rgb(0, 79, 131);
+    max-width: 1200px;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    color: azure;
+}
+.container-project-nav{
+    background-color: rgba(0, 149, 255, 0.267);
+}
+.box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #003046;
+}
+.project-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid #00b7ff;;
+    border-radius: 8px;
+    border-color: #00b7ff;
+    background-color: #003046;
+    height: 300px;
+    width: 300px;
+}

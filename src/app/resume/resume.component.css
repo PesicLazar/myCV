@@ -1,0 +1,17 @@
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;}
+
+.cv-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+.certificate-img{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}

@@ -1,0 +1,21 @@
+.toolbar {
+  position: relative;
+  z-index: 1;
+  background-color: rgb(2, 29, 48);
+}
+.logo-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    z-index: 2;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.LOGO {
+  max-height: 60px; 
+  width: auto;
+  margin-right: auto;
+  }
+  
