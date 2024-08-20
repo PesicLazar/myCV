@@ -1,38 +1,32 @@
+<div class="body-content">
 <mat-toolbar class="toolbar">
-  <!-- main bottons -->
-  <div fxFlex fxLayoutAlign="center center" fxLayoutGap="30px">
-    <button mat-button routerLink="/" class="mat-tonal-button">
-      <mat-icon>home</mat-icon>
-      About Me
-    </button>
-    <button mat-button routerLink="/resume" class="mat-tonal-button">
-      <mat-icon>recent_actors</mat-icon>
-      Resume
-    </button>
-    <button mat-button routerLink="/contact" class="mat-tonal-button">
-      <mat-icon>call</mat-icon>
-      Contact
-    </button>
-    <button mat-button routerLink="/portfolio" class="mat-tonal-button">
-      <mat-icon>folder_open</mat-icon>
-      Portfolio
-    </button>
+  <!-- Toolbar  -->
+  <div class="toolbar-container">
+    <img
+      src="/myCV/assets/LOGO.jpg"
+      style="width: auto; height: 60px"
+      routerLink="/"
+      class="logo-button"
+    />
+    <!-- Main Buttons -->
+    <div class="toolbar-buttons" fxLayoutAlign="center center" fxLayoutGap="30px">
+      <button mat-button routerLink="/" class="mat-tonal-button">
+        <mat-icon>home</mat-icon>
+        About Me
+      </button>
+      <button mat-button routerLink="/resume" class="mat-tonal-button">
+        <mat-icon>recent_actors</mat-icon>
+        Resume
+      </button>
+      <button mat-button routerLink="/contact" class="mat-tonal-button">
+        <mat-icon>call</mat-icon>
+        Contact
+      </button>
+      <button mat-button routerLink="/portfolio" class="mat-tonal-button">
+        <mat-icon>folder_open</mat-icon>
+        Portfolio
+      </button>
+    </div>
   </div>
-  <!-- change languge -->
 </mat-toolbar>
-<img
-  src="/myCV/assets/logo.jpg"
-  style="width: auto; height: 60px"
-  routerLink="/"
-  class="logo-button"
-/>
-<div class="background-music">
-  <iframe
-    width="0"
-    height="0"
-    src="https://www.youtube.com/embed/7go-2MMeILY?autoplay=1&loop=1&playlist=7go-2MMeILY&mute=1"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-  ></iframe>
 </div>

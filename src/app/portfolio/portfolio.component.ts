@@ -21,7 +21,7 @@ export class PortfolioComponent implements OnInit {
     Tag.tagKrita,
     Tag.tagMongoDB,
     Tag.tagRxJS,
-    Tag.tagAxios,
+    Tag.tagJava,
     Tag.tagExcel,
   ];
 

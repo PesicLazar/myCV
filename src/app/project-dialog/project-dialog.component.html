@@ -1,5 +1,13 @@
 <h1 mat-dialog-title>{{ data.project.name }}</h1>
 <div mat-dialog-content>
+    <!-- Displaying project images -->
+    <div *ngIf="data.project.pictures.length > 0">
+      <img
+        *ngFor="let pic of data.project.pictures"
+        [src]="pic.url"
+        [alt]="pic.toString()"
+        style="width: 100%; max-width: 400px; margin-bottom: 10px;"
+      />
   <p>{{ data.project.summary }}</p>
   <p>{{ data.project.description }}</p>
 </div>

@@ -4,7 +4,11 @@
     <mat-card-title>{{ project.name }}</mat-card-title>
     <mat-card-subtitle>{{ project.summary }}</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content></mat-card-content>
+  <mat-card-content>
+    <div *ngIf="project.pictures.length > 0">
+
+    </div>
+  </mat-card-content>
   <mat-card-footer class="pograming-tags">
     <mat-chip-set>
       <mat-chip

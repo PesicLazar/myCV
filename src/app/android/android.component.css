@@ -1,21 +1,60 @@
 .toolbar {
-  position: relative;
-  z-index: 1;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps the toolbar above other content */
   background-color: rgb(2, 29, 48);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
+
+.toolbar-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.toolbar-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .logo-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 60px;
-    z-index: 2;
-    background: none;
-    border: none;
-    padding: 0;
+  position: absolute;
+  top: 0;
+  left: 90px; 
+  height: 60px;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 0;
 }
-.LOGO {
-  max-height: 60px; 
-  width: auto;
-  margin-right: auto;
+
+@media (max-width: 768px) {
+  .toolbar {
+    height: 80px; 
+    padding: 0 10px;
+  }
+
+  .toolbar-buttons {
+    gap: 0; 
+    width: 90%;
+  }
+  .toolbar-buttons button {
+    font-size: 12px; /* Make the buttons smaller */
+    padding: 5px 10px; /* Adjust padding inside buttons */
+  }
+
+  .logo-button {
+    display: none; 
   }
   
+  .body-content {
+    padding-top: 80px; /* Add padding to prevent content from hiding under the toolbar */
+  }
+}

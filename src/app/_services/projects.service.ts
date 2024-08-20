@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../_models/Project';
 import { Tag } from '../_models/Tag';
+import { Pic } from '../_models/Pictures';
 
 @Injectable({
   providedIn: 'root',
@@ -10,22 +11,24 @@ export class ProjectsService {
   projects: Project[] = [
     {
       id: 0,
-      name: 'Flying Pig',
-      summary: 'small simple game',
-      description: '',
-      projectLink: '',
-      tags: [Tag.tagUnity, Tag.tagCsharp],
-      pictures: [],
+      name: 'Computer Graphics',
+      summary: 'OpenGL project',
+      description: 'a game were you need to select shapes and then rotate and resize them to fit corretly in the historial building',
+      projectLink: 'https://github.com/PesicLazar/computer_graphics',
+      tags: [
+      Tag.tagJava
+      ],
+      pictures: [Pic.picGraphic],
     },
     {
       id: 1,
-      name: 'computer-vision-finnal',
-      summary: 'final exam for computer vision subject in Singidunum University',
-      description: 'image regonition with rock and metal album cover database',
-      projectLink: 'https://github.com/PesicLazar?tab=repositories',
-      tags: [Tag.tagPyhton, 
+      name: 'mining of massive databases final',
+      summary: 'final exam for mining of massive databases subject in Singidunum University',
+      description: 'working with database with people from diffrent jobs, salary, experience_level, employment_type',
+      projectLink: 'https://github.com/PesicLazar/Mining-of-Massive-Datasets-final/blob/main/ds_salaries.csv',
+      tags: [Tag.tagPyhton, Tag.tagExcel
       ],
-      pictures: [],
+      pictures: [Pic.picMining],
     },
     {
       id: 2,
@@ -37,21 +40,26 @@ export class ProjectsService {
         Tag.tagPyhton,
         Tag.tagExcel,
       ],
-      pictures: [],
+      pictures: [Pic.picAi],
     },
     {
       id: 3,
-      name: 'Some Site',
-      summary: 'A description of some site',
-      description: '',
+      name: 'Flying Pig',
+      summary: 'small simple game',
+      description: 'the player need to click space as fast as possible to move forward and reach new score',
       projectLink: '',
-      tags: [
-        Tag.tagAngular,
-        Tag.tagTypescript,
-        Tag.tagRxJS,
-        Tag.tagMongoDB,
+      tags: [Tag.tagUnity, Tag.tagCsharp],
+      pictures: [Pic.picPig],
+    },
+    {
+      id: 4,
+      name: 'computer-vision-finnal',
+      summary: 'final exam for computer vision subject in Singidunum University',
+      description: 'image regonition with rock and metal album cover database',
+      projectLink: 'https://github.com/PesicLazar?tab=repositories',
+      tags: [Tag.tagPyhton, 
       ],
-      pictures: [],
+      pictures: [Pic.picVision],
     }
   ];
 

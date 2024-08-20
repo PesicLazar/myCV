@@ -1,9 +1,12 @@
+.filter{
+    margin-top: 60px;
+}
 .filter-txt {
     text-align: center; /* Centers the text */
     width: 100%; /* Ensures the text takes up the full width */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Horizontally centers the content */
-    align-items: center; /* Vertically centers the content */
+    align-items: center; /* Vertically centers the content */ 
 }
 .filter-chips {
     display: flex;
@@ -19,4 +22,11 @@
     display: flex;
     justify-content: center; /* Centers the text inside each chip */
     align-items: center; /* Centers the text inside each chip */
+}
+
+@media (max-width:768px) {
+    .filter{
+        margin-top: 0px;
+    }
+    
 }
