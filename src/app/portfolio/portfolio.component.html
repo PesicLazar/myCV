@@ -1,4 +1,4 @@
-<div class="filter">
+<div class="filter" fxLayoutAlign="center center">
   <mat-accordion>
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
@@ -17,6 +17,6 @@
   </mat-accordion>
 </div>
 
-<div *ngFor="let project of filteredProjects">
+<div *ngFor="let project of filteredProjects" fxLayoutAlign="center center" >
   <app-project-card [project]="project"></app-project-card>
 </div>

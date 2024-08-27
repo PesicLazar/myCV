@@ -8,19 +8,10 @@
     justify-content: center; /* Horizontally centers the content */
     align-items: center; /* Vertically centers the content */ 
 }
-.filter-chips {
-    display: flex;
-    justify-content: center; /* Centers the chips horizontally */
-    align-items: center; /* Centers the chips vertically */
-    flex-wrap: wrap; /* Allows chips to wrap to the next line if necessary */
-    padding: 10px; /* Adds padding around the chips */
-    gap: 10px; /* Adds space between chips */
-}
+
 
 .filter-chips mat-chip-option {
     margin: 5px; /* Adds margin around each chip for spacing */
-    display: flex;
-    justify-content: center; /* Centers the text inside each chip */
     align-items: center; /* Centers the text inside each chip */
 }
 

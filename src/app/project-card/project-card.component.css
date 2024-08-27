@@ -1,3 +1,10 @@
-.pograming-tags{
-    padding: 16px;
+.pograming-tags {
+  padding: 16px;
+}
+.card {
+  padding: 20px;
+  box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
+  border-radius: 8px;
+  text-align: center;
+  width: 1000px;
 }
