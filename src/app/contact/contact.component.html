@@ -3,8 +3,54 @@
     <h1 class="head-card-title">Contact</h1>
     <p class="head-card-text">
       I can be reached at the following email:
-      <span class="email">{{ email }}</span> <br />
+      <span class="email">{{ emailmy }}</span> <br />
     </p>
+    <p class="head-card-text">or directly massage me on whatsapp</p>
+    <div fxLayout="column" class="whatsapp-form">
+      <!-- Name field -->
+      <mat-form-field>
+        <mat-label class="head-card-text">Name</mat-label>
+        <input
+          matInput
+          placeholder="Your Name"
+          [formControl]="name"
+          (blur)="updateEmptyFieldErrorMessage()"
+          required
+        />
+        @if (name.invalid) {
+        <mat-error>{{ emptyFieldErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <!-- Email -->
+      <mat-form-field>
+        <mat-label class="head-card-text">Email</mat-label>
+        <input
+          matInput
+          placeholder="SkibidiToilet@example.com"
+          [formControl]="email"
+          (blur)="updateEmailErrorMessage()"
+          required
+        />
+        @if (email.invalid) {
+        <mat-error>{{ emailErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <!-- Text message -->
+      <mat-form-field>
+        <mat-label class="head-card-text">Massage</mat-label>
+        <textarea
+          matInput
+          placeholder="We whould like to hire you for.."
+          [formControl]="message"
+          (blur)="updateEmptyFieldErrorMessage()"
+          required
+        ></textarea>
+        @if (message.invalid) {
+        <mat-error>{{ emptyFieldErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <button class="submit-button">Send Form to Whatsapp</button>
+    </div>
 
     <p class="head-card-text">
       Feel free to connect with me on any of the following platforms:
@@ -38,14 +84,25 @@
     </mat-card>
   </a>
   <a href="https://www.linkedin.com/in/lazar-pesic-958731322/" target="_blank">
-  <mat-card class="other-cards">
-    <img
-      src="assets/SVGicons/linkedin.svg"
-      alt="LinkedIn Icon"
-      width="40"
-      height="40"
-    />
-    <h3 mat-line>LinkedIn</h3>
-  </mat-card>
-</a>
+    <mat-card class="other-cards">
+      <img
+        src="assets/SVGicons/linkedin.svg"
+        alt="LinkedIn Icon"
+        width="40"
+        height="40"
+      />
+      <h3 mat-line>LinkedIn</h3>
+    </mat-card>
+  </a>
+  <a href="https://www.instagram.com/lakikill15/" target="_blank">
+    <mat-card class="other-cards">
+      <img
+        src="assets/SVGicons/instagram.svg"
+        alt="Instegram icon"
+        width="40"
+        height="40"
+      />
+      <h3 mat-line>Instagram</h3>
+    </mat-card>
+  </a>
 </div>

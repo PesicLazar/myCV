@@ -10,6 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
     imports: [
@@ -24,7 +27,9 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatPaginatorModule,
         MatExpansionModule,
         MatDialogModule,
-
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule
     ],
     exports: [
         MatToolbarModule,
@@ -38,6 +43,9 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatPaginatorModule,
         MatExpansionModule,
         MatDialogModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule
     ],
 })
 

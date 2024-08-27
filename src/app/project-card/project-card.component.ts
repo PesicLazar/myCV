@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Project } from '../_models/Project';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ProjectsService } from '../_services/projects.service';
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component';
 

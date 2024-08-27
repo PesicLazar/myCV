@@ -1,43 +1,73 @@
-.card-container{
-    display: flex;
+.card-container {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-.head-card{
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
-    border-radius: 8px;
-    text-align: center;
-    width: 1000px;
+.head-card {
+  padding: 20px;
+  margin-top: 100px;
+  box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
+  border-radius: 8px;
+  text-align: center;
+  width: 1000px;
 }
-.head-card-title{
-    color: #ffffff;
-    font-size: 4em;
-    font-weight: bold;
-    margin-bottom: 50px;
-    margin-top: 30px;
+.head-card-title {
+  color: #ffffff;
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 30px;
 }
-.head-card-text{  
-    color: #ffffff;
-    font-size: 1em;
-    margin-bottom: 20px;}
-.email{
-    font-weight: bold;
-    color: #00ff00;}
+.head-card-text {
+  color: #ffffff;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+.email {
+  font-weight: bold;
+  color: #f2ff00;
+}
 
-.other-cards{
-    padding: 40px;
-    margin: 20px;
-    box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
-    border-radius: 8px;
-    text-align: center;
-    align-items: center;
-    width: 100px;
+.other-cards {
+  padding: 40px;
+  margin: 20px;
+  box-shadow: 4px 2px 4px rgba(255, 255, 255, 0.774);
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  width: 100px;
 }
 
 .mat-list-item {
-    margin-top: 20px;
-    padding: 20px; 
-    border: 2px solid black;
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid black;
+}
+.whatsapp-form {
+  align-items: center;
+}
+.whatsapp-form textarea {
+  width: 100%; /* Make the textarea take the full width of the form field */
+  resize: vertical; /* Allow users to resize the textarea vertically only */
+  height: 50px;
+}
+.submit-button {
+  background-color: #00ff00;
+  border: 2px solid black;
+  margin-bottom: 30px;
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    max-width: 100%; /* Allow full width on smaller screens */
+    padding: 0 10px; /* Add some padding for smaller screens */
+  }
+
+  .other-cards {
+    flex: 1 1 100%; /* Make cards take full width on smaller screens */
+    max-width: 300px; /* Adjust the max-width to control the card size on smaller screens */
+    margin: 10px auto; /* Center the cards on smaller screens */
+  }
 }
