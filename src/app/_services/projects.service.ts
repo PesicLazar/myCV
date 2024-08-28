@@ -44,15 +44,6 @@ export class ProjectsService {
     },
     {
       id: 3,
-      name: 'Flying Pig',
-      summary: 'small simple game',
-      description: 'the player need to click space as fast as possible to move forward and reach new score',
-      projectLink: '',
-      tags: [Tag.tagUnity, Tag.tagCsharp],
-      pictures: [Pic.picPig],
-    },
-    {
-      id: 4,
       name: 'computer-vision-finnal',
       summary: 'final exam for computer vision subject in Singidunum University',
       description: 'image regonition with rock and metal album cover database',
