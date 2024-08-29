@@ -13,7 +13,7 @@ export class ProjectsService {
       id: 0,
       name: 'Computer Graphics',
       summary: 'OpenGL project',
-      description: 'a game were you need to select shapes and then rotate and resize them to fit corretly in the historial building',
+      description: 'A game were you need to select shapes and then rotate and resize them to fit corretly in the historial building',
       projectLink: 'https://github.com/PesicLazar/computer_graphics',
       tags: [
       Tag.tagJava
@@ -22,9 +22,9 @@ export class ProjectsService {
     },
     {
       id: 1,
-      name: 'mining of massive databases final',
-      summary: 'final exam for mining of massive databases subject in Singidunum University',
-      description: 'working with database with people from diffrent jobs, salary, experience_level, employment_type',
+      name: 'Mining of Massive Databases',
+      summary: 'Final exam for Mining of Massive Databases subject in Singidunum University',
+      description: 'working with database of people from diffrent jobs, salaries, experience levels, employment types',
       projectLink: 'https://github.com/PesicLazar/Mining-of-Massive-Datasets-final/blob/main/ds_salaries.csv',
       tags: [Tag.tagPyhton, Tag.tagExcel
       ],
@@ -32,8 +32,8 @@ export class ProjectsService {
     },
     {
       id: 2,
-      name: 'Ai Final',
-      summary: 'final exam for AI subject in Singidunum University',
+      name: 'AI Final',
+      summary: 'Final exam for AI subject in Singidunum University',
       description: '',
       projectLink: 'https://github.com/PesicLazar?tab=repositories',
       tags: [
@@ -44,9 +44,9 @@ export class ProjectsService {
     },
     {
       id: 3,
-      name: 'computer-vision-finnal',
-      summary: 'final exam for computer vision subject in Singidunum University',
-      description: 'image regonition with rock and metal album cover database',
+      name: 'Computer Vision Final',
+      summary: 'Final exam for Computer Vision subject in Singidunum University',
+      description: 'Image regonition with "rock" and "metal" album covers databases',
       projectLink: 'https://github.com/PesicLazar?tab=repositories',
       tags: [Tag.tagPyhton, 
       ],
