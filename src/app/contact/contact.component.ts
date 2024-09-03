@@ -1,5 +1,5 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { merge } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -10,23 +10,25 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class ContactComponent implements OnInit {
   emailmy: string = 'lp2017230143@gmail.com';
-  ngOnInit(): void {}
+  formForWhatsApp: FormGroup;
 
-  readonly name = new FormControl('', [Validators.required]);
-  readonly email = new FormControl('', [Validators.required, Validators.email]);
-  readonly message = new FormControl('', [Validators.required]);
+  emailErrorMessage = '';
+  emptyFieldErrorMessage = '';
 
-  emailErrorMessage = signal('');
-  emptyFieldErrorMessage = signal('');
+  constructor(private fb: FormBuilder) {
+    this.formForWhatsApp = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
 
-  constructor() {
     merge(
-      this.email.statusChanges,
-      this.email.valueChanges,
-      this.name.statusChanges,
-      this.name.valueChanges,
-      this.message.statusChanges,
-      this.message.valueChanges
+      this.formForWhatsApp.get('email')!.statusChanges,
+      this.formForWhatsApp.get('email')!.valueChanges,
+      this.formForWhatsApp.get('name')!.statusChanges,
+      this.formForWhatsApp.get('name')!.valueChanges,
+      this.formForWhatsApp.get('message')!.statusChanges,
+      this.formForWhatsApp.get('message')!.valueChanges
     )
     .pipe(takeUntilDestroyed())
     .subscribe(() => {
@@ -35,20 +37,49 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {}
+
   updateEmailErrorMessage() {
-    if (this.email.hasError('required')) {
-      this.emailErrorMessage.set('You must enter a value');
-    } else if (this.email.hasError('email')) {
-      this.emailErrorMessage.set('Not a valid email');
+    const emailControl = this.formForWhatsApp.get('email');
+    if (emailControl!.hasError('required')) {
+      this.emailErrorMessage = 'You must enter a value';
+    } else if (emailControl!.hasError('email')) {
+      this.emailErrorMessage = 'Not a valid email';
     } else {
-      this.emailErrorMessage.set('');
+      this.emailErrorMessage = '';
     }
   }
+
   updateEmptyFieldErrorMessage() {
-    if (this.name.hasError('required') || this.message.hasError('required')) {
-      this.emptyFieldErrorMessage.set('This field cannot be empty');
+    const nameControl = this.formForWhatsApp.get('name');
+    const messageControl = this.formForWhatsApp.get('message');
+    if (nameControl!.hasError('required') || messageControl!.hasError('required')) {
+      this.emptyFieldErrorMessage = 'This field cannot be empty';
     } else {
-      this.emptyFieldErrorMessage.set('');
+      this.emptyFieldErrorMessage = '';
+    }
+  }
+
+  onSubmit() {
+    if (this.formForWhatsApp.valid) {
+      console.log('Form Submitted!', this.formForWhatsApp.value);
+      // POST request logic goes here (google apps script deployment URL)
+      fetch('https://script.google.com/macros/s/AKfycbzfGJ2xTDRwgevNlTOQgAGykyZkPc-AAin3gQPUaXfynQvP_V0-TEGSV0cFv-ch8Qr3/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.formForWhatsApp.value),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    } else {
+      console.log('Form is invalid!');
     }
   }
 }

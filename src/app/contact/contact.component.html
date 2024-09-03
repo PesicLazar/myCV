@@ -5,52 +5,81 @@
       I can be reached at the following email:
       <span class="email">{{ emailmy }}</span> <br />
     </p>
-   <!--  <p class="head-card-text">or directly massage me on whatsapp</p>
-    <div fxLayout="column" class="whatsapp-form">
-       Name field 
-      <mat-form-field>
-        <mat-label class="head-card-text">Name</mat-label>
-        <input
-          matInput
-          placeholder="Your Name"
-          [formControl]="name"
-          (blur)="updateEmptyFieldErrorMessage()"
-          required
-        />
-        @if (name.invalid) {
-        <mat-error>{{ emptyFieldErrorMessage() }}</mat-error>
-        }
-      </mat-form-field>
-       Email 
-      <mat-form-field>
-        <mat-label class="head-card-text">Email</mat-label>
-        <input
-          matInput
-          placeholder="SkibidiToilet@example.com"
-          [formControl]="email"
-          (blur)="updateEmailErrorMessage()"
-          required
-        />
-        @if (email.invalid) {
-        <mat-error>{{ emailErrorMessage() }}</mat-error>
-        }
-      </mat-form-field>
-      Text message 
-      <mat-form-field>
-        <mat-label class="head-card-text">Massage</mat-label>
-        <textarea
-          matInput
-          placeholder="We whould like to hire you for.."
-          [formControl]="message"
-          (blur)="updateEmptyFieldErrorMessage()"
-          required
-        ></textarea>
-        @if (message.invalid) {
-        <mat-error>{{ emptyFieldErrorMessage() }}</mat-error>
-        }
-      </mat-form-field>
-      <button class="submit-button">Send Form to Whatsapp</button>
-    </div> -->
+    <p class="head-card-text">or directly massage me on whatsapp</p>
+    <form
+      [formGroup]="formForWhatsApp"
+      (ngSubmit)="onSubmit()"
+      #formForWhatsAppDirective="ngForm"
+    >
+      <div fxLayout="column" class="whatsapp-form">
+        <!-- Name field -->
+        <mat-form-field>
+          <mat-label class="head-card-text">Name</mat-label>
+          <input
+            matInput
+            placeholder="Your Name"
+            formControlName="name"
+            required
+          />
+          <mat-error
+            *ngIf="
+              formForWhatsApp.get('name')!.invalid &&
+              formForWhatsApp.get('name')!.touched
+            "
+          >
+            {{ emptyFieldErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email field -->
+        <mat-form-field>
+          <mat-label class="head-card-text">Email</mat-label>
+          <input
+            matInput
+            placeholder="example@skibidi.com"
+            formControlName="email"
+            required
+          />
+          <mat-error
+            *ngIf="
+              formForWhatsApp.get('email')!.invalid &&
+              formForWhatsApp.get('email')!.touched
+            "
+          >
+            {{ emailErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Message field -->
+        <mat-form-field>
+          <mat-label class="head-card-text">Message</mat-label>
+          <textarea
+            matInput
+            placeholder="We would like to hire you for.."
+            formControlName="message"
+            required
+          ></textarea>
+          <mat-error
+            *ngIf="
+              formForWhatsApp.get('message')!.invalid &&
+              formForWhatsApp.get('message')!.touched
+            "
+          >
+            {{ emptyFieldErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Submit button -->
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          [disabled]="formForWhatsApp.invalid"
+        >
+          Send Form to Whatsapp
+        </button>
+      </div>
+    </form>
 
     <p class="head-card-text">
       Feel free to contact me on any of the following platforms:

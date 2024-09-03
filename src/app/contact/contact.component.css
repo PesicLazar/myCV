@@ -51,14 +51,6 @@
   resize: vertical; /* Allow users to resize the textarea vertically only */
   height: 50px;
 }
-.submit-button {
-  background-color: #00ff00;
-  border: 2px solid black;
-  margin-bottom: 30px;
-  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
-  padding: 10px;
-}
-
 @media (max-width: 768px) {
   .card-container {
     max-width: 100%; /* Allow full width on smaller screens */

@@ -1,0 +1,17 @@
+2024/09/03-10:55:18.345 ea0 Reusing MANIFEST C:\Users\Admin\Desktop\diplomski\lazarpesicCV\CV\src\app\_services\user_data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/09/03-10:55:18.345 ea0 Recovering log #507
+2024/09/03-10:55:18.380 ea0 Reusing old log C:\Users\Admin\Desktop\diplomski\lazarpesicCV\CV\src\app\_services\user_data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000507.log 
+2024/09/03-10:55:21.779 1244 Level-0 table #514: started
+2024/09/03-10:55:21.792 1244 Level-0 table #514: 608744 bytes OK
+2024/09/03-10:55:21.794 1244 Delete type=0 #507
+2024/09/03-10:55:21.795 1244 Manual compaction at level-0 from '\x00~\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x7f\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/09/03-10:55:24.190 1244 Compacting 1@1 + 3@2 files
+2024/09/03-10:55:24.265 1244 Generated table #515@1: 41915 keys, 2199173 bytes
+2024/09/03-10:55:24.334 1244 Generated table #516@1: 20701 keys, 2202876 bytes
+2024/09/03-10:55:24.377 1244 Generated table #517@1: 47882 keys, 1179201 bytes
+2024/09/03-10:55:24.377 1244 Compacted 1@1 + 3@2 files => 5581250 bytes
+2024/09/03-10:55:24.379 1244 compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/09/03-10:55:24.379 1244 Delete type=2 #509
+2024/09/03-10:55:24.379 1244 Delete type=2 #510
+2024/09/03-10:55:24.379 1244 Delete type=2 #511
+2024/09/03-10:55:24.379 1244 Delete type=2 #514
