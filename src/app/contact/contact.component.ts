@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormControl,
   FormGroup,
   Validators,
   FormBuilder,
@@ -70,27 +69,30 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     if (this.formForWhatsApp.valid) {
-      console.log('Form Submitted!', this.formForWhatsApp.value);
-      // POST request logic goes here (google apps script deployment URL)
-      fetch(
-        'https://script.google.com/macros/s/AKfycbwPQjWkp2TthHc5sex5EtP0wdqZ2DCDg7WsHF9XdidxdumQ_Lc8f4BM5QU7FNnKAFN8/exec',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(this.formForWhatsApp.value),
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Success:', data);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
+      const formData = new FormData();
+      formData.append('entry.828190814', this.formForWhatsApp.value.name);
+      formData.append('entry.783380545', this.formForWhatsApp.value.email);
+      formData.append('entry.563526280', this.formForWhatsApp.value.message);
+  
+      fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5aeoe9_uvFN8PBXtYzGTBgl2V2KGqGJzhbYTDrvzcsveFHw/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(() => {
+        console.log('Form successfully submitted!');
+      }).catch((error) => {
+        console.error('Error:', error);
+      });
     } else {
       console.log('Form is invalid!');
     }
   }
 }
+
+/* POST */
+/* Google Form's POST URL */
+/* https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5aeoe9_uvFN8PBXtYzGTBgl2V2KGqGJzhbYTDrvzcsveFHw/formResponse */
+/* form codes */
+/* entry.828190814	"name"
+entry.783380545	"email"
+entry.563526280	"massage" */

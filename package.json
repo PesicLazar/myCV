@@ -23,7 +23,6 @@
     "@ngbracket/ngx-layout": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "wbm": "^1.1.16",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
