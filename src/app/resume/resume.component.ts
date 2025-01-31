@@ -6,9 +6,21 @@ import { Component } from '@angular/core';
   styleUrl: './resume.component.css'
 })
 export class ResumeComponent {
-  downloadPDF() {
+  downloadPDFIoT() {
     const link = document.createElement('a');
-    link.href = 'assets/Resume Lazar Pesic.pdf'; 
+    link.href = 'assets/IoTCV.pdf'; 
+    link.download = 'Resume.pdf';
+    link.click();
+  }
+  downloadPDFWeb() {
+    const link = document.createElement('a');
+    link.href = 'assets/IoTCV.pdf'; 
+    link.download = 'Resume.pdf';
+    link.click();
+  }
+  downloadPDFGame() {
+    const link = document.createElement('a');
+    link.href = 'assets/IoTCV.pdf'; 
     link.download = 'Resume.pdf';
     link.click();
   }

@@ -1,18 +1,30 @@
+<div class="gh0st">
+
+</div>
 <div class="button-container" fxLayout="column" fxLayoutAlign="center center">
-  <button mat-fab extended (click)="downloadPDF()">
-    <mat-icon>download</mat-icon>Download PDF Resume
+  <button mat-fab extended (click)="downloadPDFWeb()">
+    <mat-icon>download</mat-icon>Download PDF Web_Dev Resume
+  </button>
+</div>
+<div class="button-container" fxLayout="column" fxLayoutAlign="center center">
+  <button mat-fab extended (click)="downloadPDFGame()">
+    <mat-icon>download</mat-icon>Download PDF Game_Dev Resume
+  </button>
+</div>
+<div class="button-container" fxLayout="column" fxLayoutAlign="center center">
+  <button mat-fab extended (click)="downloadPDFIoT()">
+    <mat-icon>download</mat-icon>Download PDF IoT Resume
   </button>
 </div>
 
 <mat-accordion class="cv-column">
   <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
+    <!-- no Exprtience related to software engineering so not used for now-->
+    <!-- <mat-expansion-panel-header>
       <mat-panel-title fxLayoutAlign="center center">
         <mat-icon>engineering</mat-icon>
         Work Experience
       </mat-panel-title>
-      <!--       <mat-panel-description>
-          </mat-panel-description> -->
     </mat-expansion-panel-header>
     <h1>Social Media Manager & Waiter</h1>
     <h2>Lee House (Restaurant), Ho Chi Minh City</h2>
@@ -20,7 +32,7 @@
     <li>Created work emails for all employs</li>
     <li>Managed the restaurant: Instagram, Facebook, Google Business</li>
     <li>Promotion such as fliers and events</li>
-    <br />
+    <br /> -->
   </mat-expansion-panel>
 </mat-accordion>
 <mat-accordion class="cv-column">
@@ -93,6 +105,18 @@
         Certifications
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <h1>Software and Data Engineering Certificate</h1>
+    <img
+      src="/myCV/assets/singiCertificate.jpg"
+      class="certificate-img"
+      alt="Certificate"
+    />
+    <h1>Univercity Grades</h1>
+    <img
+      src="/myCV/assets/singiGrades.jpg"
+      class="certificate-img"
+      alt="Certificate"
+    />
     <h1>120-Hours TEFL Certificate Course</h1>
     <img
       src="/myCV/assets/TEFEL.jpg"

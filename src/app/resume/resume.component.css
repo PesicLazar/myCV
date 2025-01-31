@@ -1,27 +1,28 @@
-
-.button-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin-top: 60px; /* Add some space from the toolbar */
+.gh0st {
+  height: 80px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* Add some space from the toolbar */
 }
 
-.cv-column{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto 0 auto; /* Top margin of 20px, no bottom margin */
+.cv-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto; /* Top margin of 20px, no bottom margin */
 }
-.certificate-img{
-    display: flex;
-    justify-content: center;
-    height: 300px;
-    max-width: 100%; /* Ensure the image scales properly */
-    object-fit: contain;
+.certificate-img {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  max-width: 100%; /* Ensure the image scales properly */
+  object-fit: contain;
 }
 @media (max-width: 768px) {
-    .button-container{
+  .button-container {
     margin-top: 0px; /* Add some space from the toolbar */
-}
+  }
 }
