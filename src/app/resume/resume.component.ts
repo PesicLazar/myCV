@@ -6,21 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './resume.component.css'
 })
 export class ResumeComponent {
-  downloadPDFIoT() {
-    const link = document.createElement('a');
-    link.href = 'assets/IoTCV.pdf'; 
-    link.download = 'Resume.pdf';
-    link.click();
-  }
+
   downloadPDFWeb() {
     const link = document.createElement('a');
-    link.href = 'assets/IoTCV.pdf'; 
-    link.download = 'Resume.pdf';
-    link.click();
-  }
-  downloadPDFGame() {
-    const link = document.createElement('a');
-    link.href = 'assets/IoTCV.pdf'; 
+    link.href = 'assets/IT CV.pdf'; 
     link.download = 'Resume.pdf';
     link.click();
   }

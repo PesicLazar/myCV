@@ -5,7 +5,12 @@
       I can be reached at the following email:
       <span class="email">{{ emailmy }}</span> <br />
     </p>
-    <p class="head-card-text">or directly massage me on whatsapp (not working yet)</p>
+
+    <p class="head-card-text">
+      Finnish phone:
+      <span class="email">{{ phonemy }}</span> <br />
+    </p>
+    <p class="head-card-text">or directly massage me on whatsapp</p>
     <!-- when working add to the text above (your maasage will be answered the next day) -->
     <form
       [formGroup]="formForWhatsApp"
@@ -81,8 +86,7 @@
         </button>
       </div>
     </form>
-
-    <p class="head-card-text">
+    <p class="head-card-text" style="margin-top:2%;">
       Feel free to contact me on any of the following platforms:
     </p>
   </mat-card>

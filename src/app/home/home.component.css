@@ -1,77 +1,105 @@
-.container{
-    /* background-color: rgba(111, 241, 122, 0.308); */
-    background-image: url('https://png.pngtree.com/background/20230617/original/pngtree-iridescent-blue-metallic-texture-a-geometric-crystallized-wallpaper-featuring-abstract-faceted-picture-image_3705675.jpg');
-}
-.about-me{
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hello {
+    margin-top: 5%;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Space between image and text */
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+    opacity: 1;
+  }
+  
+  .container {
+    background-image: url("https://png.pngtree.com/background/20230617/original/pngtree-iridescent-blue-metallic-texture-a-geometric-crystallized-wallpaper-featuring-abstract-faceted-picture-image_3705675.jpg");
+  }
+  
+  .about-me {
     background-color: rgba(0, 149, 255, 0.397);
     color: azure;
     margin: 0;
-}
-
-.profile-pic{
+  }
+  
+  .profile-pic {
     height: 256px;
     width: 256px;
     object-fit: cover; /* Maintain aspect ratio */
-    border: 5px solid #00b7ff; 
+    border: 5px solid #00b7ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
     clip-path: polygon(
-        30% 0%, 70% 0%, /* top side */
-        100% 30%, 100% 70%, /* right side */
-        70% 100%, 30% 100%, /* bottom side */
-        0% 70%, 0% 30% /* left side */
+      30% 0%,
+      70% 0%,
+      /* top side */ 100% 30%,
+      100% 70%,
+      /* right side */ 70% 100%,
+      30% 100%,
+      /* bottom side */ 0% 70%,
+      0% 30% /* left side */
     ); /* Octagon shape */
-}
-.about-text{
+  }
+  
+  .about-text {
     background-color: rgb(0, 79, 131);
     max-width: 1200px;
     text-align: left;
-    margin-top: 80px;
-    margin-bottom: 80px;
     color: azure;
-}
-.container-project-nav{
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Ensures text inside aligns with the image */
+  }
+  
+  .container-project-nav {
     background-color: rgba(0, 149, 255, 0.267);
-}
-.box-container{
+  }
+  
+  .box-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     background-color: #003046;
-}
-.project-box{
+  }
+  
+  .project-box {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 16px;
     padding: 16px;
-    border: 1px solid #00b7ff;;
+    border: 1px solid #00b7ff;
     border-radius: 8px;
-    border-color: #00b7ff;
     background-color: #003046;
     height: 300px;
     width: 300px;
-}
-
-@media (max-width: 768px) {
-/* Stack the image and text vertically */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px; 
   }
-
-  .profile-pic {
-    margin-right: 0; /* Remove the right margin on mobile */
-    margin-bottom: 20px; /* Add space below the image */
-    transform: translateX(16.5%); /* Move the image slightly to the right */
+  
+  @media (max-width: 768px) {
+    /* Stack the image and text vertically */
+    .hello {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .profile-pic {
+      margin-bottom: 20px; /* Add space below the image */
+      transform: none; /* Remove unnecessary shifts */
+    }
+  
+    .about-text {
+      max-width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
   }
-
-  .about-text {
-    max-width: 100%; /* Allow the text to take full width */
-    text-align: center; /* Center align the text */
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-}
+  

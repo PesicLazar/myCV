@@ -10,7 +10,11 @@
       />
   <p>{{ data.project.summary }}</p>
   <p>{{ data.project.description }}</p>
-  <p>{{data.project.projectLink}}</p>
+  <p>
+    <a [href]="data.project.projectLink" target="_blank" rel="noopener noreferrer">
+      {{ data.project.projectLink }}
+    </a>
+  </p>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
