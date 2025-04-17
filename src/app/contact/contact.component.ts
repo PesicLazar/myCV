@@ -14,7 +14,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class ContactComponent implements OnInit {
   emailmy: string = 'lp2017230143@gmail.com';
-  phonemy: string = '+358413655029'
+  phonemy: string = '+381693006690'
   formForWhatsApp: FormGroup;
 
   emailErrorMessage = '';
