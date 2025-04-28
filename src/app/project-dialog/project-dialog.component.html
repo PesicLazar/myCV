@@ -17,5 +17,11 @@
   </p>
 </div>
 <div mat-dialog-actions>
+  <!-- optional button -->
+  <div *ngIf="data.project.customButtonLabel">
+    <button mat-raised-button color="accent" (click)="goToProject()">
+      {{ data.project.customButtonLabel }}
+    </button>
+  </div>
   <button mat-button mat-dialog-close>Close</button>
 </div>

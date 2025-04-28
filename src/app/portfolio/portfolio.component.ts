@@ -14,13 +14,8 @@ export class PortfolioComponent implements OnInit {
   selectedTags: Set<Tag> = new Set(); // Track selected tags
   tags = [
     Tag.tagAngular,
-    Tag.tagCsharp,
-    Tag.tagUnity,
     Tag.tagPyhton,
     Tag.tagTypescript,
-    Tag.tagKrita,
-    Tag.tagMongoDB,
-    Tag.tagRxJS,
     Tag.tagJava,
     Tag.tagExcel,
   ];

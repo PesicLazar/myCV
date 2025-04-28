@@ -1,0 +1,36 @@
+<mat-card appearance="outlined" class="card" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-title>Arena Mini Game</mat-card-title>
+    <p>choose a hero to bet your money on</p>
+  
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="width: 100%; margin: 1rem 0;">
+      <div (click)="placeBet(0)" [style.border]="betOn === 0 ? '2px solid gold' : ''">
+        <img [src]="hero1.portrait" alt="Hero 1" style="width: 150px;" />
+        <p>{{ hero1.race }} {{ hero1.class }}</p>
+      </div>
+  
+      <span style="font-size: 2rem;">⚔️</span>
+  
+      <div (click)="placeBet(1)" [style.border]="betOn === 1 ? '2px solid gold' : ''">
+        <img [src]="hero2.portrait" alt="Hero 2" style="width: 150px;" />
+        <p>{{ hero2.race }} {{ hero2.class }}</p>
+      </div>
+    </div>
+  
+    <div>
+      <button mat-button color="primary" (click)="battle()">Battle</button>
+      <button mat-button (click)="generateHeroes()">New Match</button>
+    </div>
+  
+    <div style="margin-top: 1rem;">
+      <mat-label>💰 Gold: {{ gold }}</mat-label>
+    </div>
+  
+    <mat-card-content>
+      <h4>Battle Log</h4>
+      <pre class="battle-log">{{ battleLog }}</pre>
+      <mat-list dense>
+        <mat-list-item *ngFor="let log of battleLog">{{ log }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  

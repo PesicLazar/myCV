@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 5%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  }
+  
+  img {
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+  img:hover {
+    transform: scale(1.05);
+  }
+  .battle-log {
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+  }

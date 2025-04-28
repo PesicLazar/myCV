@@ -13,6 +13,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { AndroidComponent } from './android/android.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProjectDialogComponent } from './project-dialog/project-dialog.component';
+import { MiniGameComponent } from './mini-game/mini-game.component';
 
 
 
@@ -26,6 +27,7 @@ import { ProjectDialogComponent } from './project-dialog/project-dialog.componen
     AndroidComponent,
     ProjectCardComponent,
     ProjectDialogComponent,
+    MiniGameComponent,
   ],
   
   imports: [

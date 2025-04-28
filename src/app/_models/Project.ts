@@ -10,4 +10,6 @@ export interface Project{
     projectLink: string;
     pictures: Pic[];
     tags: Tag[];
+    customButtonLabel?: string; // <-- costume title for that optional button
+    customButtonAction?: string; // <-- Optional pop up button for eqecutable projects
 }
