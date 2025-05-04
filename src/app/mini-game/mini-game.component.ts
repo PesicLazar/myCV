@@ -20,6 +20,15 @@ export class MiniGameComponent {
     this.generateHeroes();
   }
 
+  newGame(): void {
+    this.gold = 50;
+    this.battleLog = [];
+    this.winnerIndex = null;
+    this.betOn = null;
+    this.hero1 = this.generateHero();
+    this.hero2 = this.generateHero();
+  }
+
   generateHero(): Hero {
     const race = RACES[Math.floor(Math.random() * RACES.length)];
     const cls = CLASSES[Math.floor(Math.random() * CLASSES.length)];
@@ -79,5 +88,8 @@ export class MiniGameComponent {
       }
       this.betOn = null;
     }
+
+    // 👇 Automatically replace loser with a new hero
+    this.generateHeroes();
   }
 }

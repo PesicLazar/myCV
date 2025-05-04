@@ -18,13 +18,14 @@
   img:hover {
     transform: scale(1.05);
   }
-  .battle-log {
-    white-space: pre-wrap;
-    max-height: 300px;
-    overflow-y: auto;
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: monospace;
+  .battlebutton {
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #c62828 !important; /* stronger red */
+    color: white !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+    cursor: pointer;
   }
