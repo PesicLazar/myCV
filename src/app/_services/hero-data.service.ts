@@ -6,13 +6,18 @@ export const RACES = [
     },
     {
       name: 'Elf',
-      stats: { endurance: 15, strength: 7, accuracy: 9, speed: 9, armor: 4, intelligence: 4 },
+      stats: { endurance: 15, strength: 7, accuracy: 5, speed: 5, armor: 4, intelligence: 9 },
       portraits: ['/assets/RPG/Elfs/elf1.jpeg', '/assets/RPG/Elfs/elf2.jpeg'],
     },
     {
       name: 'Orc',
       stats: { endurance: 25, strength: 12, accuracy: 2, speed: 7, armor: 2, intelligence: 2 },
       portraits: ['/assets/RPG/Orcs/orc1.jpeg', '/assets/RPG/Orcs/orc2.jpeg', '/assets/RPG/Orcs/orc3.jpeg'],
+    },
+    {
+      name: 'Khajit',
+      stats: { endurance: 15, strength: 8, accuracy: 9, speed: 9, armor: 0, intelligence: 2 },
+      portraits: ['/assets/RPG/Orcs/cat1.jpeg', '/assets/RPG/Orcs/cat2.jpeg', '/assets/RPG/Orcs/cat3.jpeg', '/assets/RPG/Orcs/cat4.png'],
     }
   ];
   
