@@ -6,6 +6,7 @@ import {
 } from '@angular/forms';
 import { merge } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +21,7 @@ export class ContactComponent implements OnInit {
   emailErrorMessage = '';
   emptyFieldErrorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.formForWhatsApp = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -80,13 +81,18 @@ export class ContactComponent implements OnInit {
         body: formData,
         mode: 'no-cors'
       }).then(() => {
-        console.log('Form successfully submitted!');
+         this.openSnackBar('Message sent successfully!', 'Close');
       }).catch((error) => {
-        console.error('Error:', error);
+        this.openSnackBar('Failed to send message.', 'Close');
       });
     } else {
-      console.log('Form is invalid!');
+      this.openSnackBar('Form is invalid. Please fix errors.', 'Close');
     }
+  }
+    openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+    });
   }
 }
 

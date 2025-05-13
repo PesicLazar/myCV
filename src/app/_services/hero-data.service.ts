@@ -17,7 +17,7 @@ export const RACES = [
     {
       name: 'Khajit',
       stats: { endurance: 15, strength: 8, accuracy: 9, speed: 9, armor: 0, intelligence: 2 },
-      portraits: ['/assets/RPG/Orcs/cat1.jpeg', '/assets/RPG/Orcs/cat2.jpeg', '/assets/RPG/Orcs/cat3.jpeg', '/assets/RPG/Orcs/cat4.png'],
+      portraits: ['/assets/RPG/Khajit/cat1.jpeg', '/assets/RPG/Khajit/cat2.jpeg', '/assets/RPG/Khajit/cat3.jpeg', '/assets/RPG/Khajit/cat4.png'],
     }
   ];
   
