@@ -18,11 +18,13 @@
     >
       <img [src]="hero1.portrait" alt="Hero 1" style="width: 150px" />
       <p>{{ hero1.race }} {{ hero1.class }}</p>
-      <div>
-        <button class="battlebutton" mat-button color="warn" (click)="battle()">Battle</button>
-      </div>
     </div>
-    <span style="font-size: 2rem">⚔️</span>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <span style="font-size: 2rem">⚔️</span>
+      <button class="battlebutton" mat-button color="warn" (click)="battle()">
+        Battle
+      </button>
+    </div>
     <div
       (click)="placeBet(1)"
       [style.border]="betOn === 1 ? '2px solid gold' : ''"
@@ -34,7 +36,7 @@
 
   <div>
     <button mat-button color="primary" (click)="newGame()">New Game</button>
-    <button mat-button color="primary">Record</button>
+    <button mat-button color="primary">Retire</button>
   </div>
 
   <div style="margin-top: 1rem">

@@ -24,7 +24,7 @@ export const RACES = [
   export const CLASSES = [
     {
       name: 'Warrior',
-      modifiers: { endurance: +5, strength: +2, armor: +3 },
+      modifiers: { endurance: +4, strength: +4, armor: +2 },
     },
     {
       name: 'Thief',
@@ -33,5 +33,9 @@ export const RACES = [
     {
       name: 'Mage',
       modifiers: { intelligence: +5, speed: +3, accuracy: +2 },
+    },
+      {
+      name: 'Shaman',
+      modifiers: { endurance: +3, intelligence: +3, strength: +3, speed: +1 },
     }
   ];
