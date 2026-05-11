@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Hero } from '../_models/Hero';
 import { CLASSES, RACES } from '../_services/hero-data.service';
+import { WinDialogComponent } from '../win-dialog/win-dialog.component';
+import { LoseDialogComponent } from '../lose-dialog/lose-dialog.component';
 
 @Component({
   selector: 'app-mini-game',
@@ -16,7 +19,7 @@ export class MiniGameComponent {
   gold = 50;
   betOn: 0 | 1 | null = null;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.generateHeroes();
   }
 
@@ -89,7 +92,19 @@ export class MiniGameComponent {
       this.betOn = null;
     }
 
-    // 👇 Automatically replace loser with a new hero
-    this.generateHeroes();
+    if (this.gold > 1000) {
+      const dialogRef = this.dialog.open(WinDialogComponent);
+      dialogRef.afterClosed().subscribe(() => {
+        this.newGame();
+      });
+    } else if (this.gold === 0) {
+      const dialogRef = this.dialog.open(LoseDialogComponent);
+      dialogRef.afterClosed().subscribe(() => {
+        this.newGame();
+      });
+    } else {
+      // 👇 Automatically replace loser with a new hero
+      this.generateHeroes();
+    }
   }
 }

@@ -14,6 +14,8 @@ import { AndroidComponent } from './android/android.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProjectDialogComponent } from './project-dialog/project-dialog.component';
 import { MiniGameComponent } from './mini-game/mini-game.component';
+import { WinDialogComponent } from './win-dialog/win-dialog.component';
+import { LoseDialogComponent } from './lose-dialog/lose-dialog.component';
 
 
 
@@ -28,6 +30,8 @@ import { MiniGameComponent } from './mini-game/mini-game.component';
     ProjectCardComponent,
     ProjectDialogComponent,
     MiniGameComponent,
+    WinDialogComponent,
+    LoseDialogComponent,
   ],
   
   imports: [
