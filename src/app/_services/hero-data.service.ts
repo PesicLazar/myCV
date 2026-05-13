@@ -1,41 +1,80 @@
+export const STAT_KEYS = ['strength', 'agility', 'intelligence'] as const;
+
 export const RACES = [
     {
       name: 'Human',
-      stats: { endurance: 20, strength: 10, accuracy: 5, speed: 5, armor: 5, intelligence: 6 },
+      stats: { strength: 1, agility: 0, intelligence: 2 },
       portraits: ['/assets/RPG/Humans/human1.jpeg', '/assets/RPG/Humans/human2.jpeg'],
     },
     {
-      name: 'Elf',
-      stats: { endurance: 15, strength: 7, accuracy: 5, speed: 5, armor: 4, intelligence: 9 },
+      name: 'High Elf',
+      stats: { strength: 0, agility: 1, intelligence: 2 },
+      portraits: ['/assets/RPG/Elfs/elf1.jpeg', '/assets/RPG/Elfs/elf2.jpeg'],
+    },
+    {
+      name: 'Night Elf',
+      stats: { strength: 0, agility: 2, intelligence: 1 },
       portraits: ['/assets/RPG/Elfs/elf1.jpeg', '/assets/RPG/Elfs/elf2.jpeg'],
     },
     {
       name: 'Orc',
-      stats: { endurance: 25, strength: 12, accuracy: 2, speed: 7, armor: 2, intelligence: 2 },
+      stats: { strength: 2, agility: 1, intelligence: 0 },
       portraits: ['/assets/RPG/Orcs/orc1.jpeg', '/assets/RPG/Orcs/orc2.jpeg', '/assets/RPG/Orcs/orc3.jpeg'],
     },
     {
       name: 'Khajit',
-      stats: { endurance: 15, strength: 8, accuracy: 9, speed: 9, armor: 0, intelligence: 2 },
+      stats: { strength: 1, agility: 2, intelligence: 0 },
       portraits: ['/assets/RPG/Khajit/cat1.jpeg', '/assets/RPG/Khajit/cat2.jpeg', '/assets/RPG/Khajit/cat3.jpeg', '/assets/RPG/Khajit/cat4.png'],
-    }
-  ];
-  
-  export const CLASSES = [
+    },
     {
-      name: 'Warrior',
-      modifiers: { endurance: +4, strength: +4, armor: +2 },
+      name: 'Dwarf',
+      stats: { strength: 2, agility: 0, intelligence: 1 },
+      portraits: ['/assets/RPG/Humans/human1.jpeg', '/assets/RPG/Humans/human2.jpeg'],
+    },
+    {
+      name: 'Shape Shifter',
+      stats: { strength: 1, agility: 1, intelligence: 1 },
+      portraits: ['/assets/RPG/Khajit/cat1.jpeg', '/assets/RPG/Khajit/cat2.jpeg', '/assets/RPG/Khajit/cat3.jpeg', '/assets/RPG/Khajit/cat4.png','/assets/RPG/Humans/human1.jpeg', '/assets/RPG/Humans/human2.jpeg','/assets/RPG/Orcs/orc1.jpeg', '/assets/RPG/Orcs/orc2.jpeg', '/assets/RPG/Orcs/orc3.jpeg','/assets/RPG/Elfs/elf1.jpeg', '/assets/RPG/Elfs/elf2.jpeg'],
+    },  ];
+
+    export const CLASSES = [
+    {
+      name: 'Warlock',
+      stats: { strength: 2, agility: 0, intelligence: 1 },
     },
     {
       name: 'Thief',
-      modifiers: { speed: +4, accuracy: +5, armor: +1 },
+      stats: { strength: 1, agility: 2, intelligence: 0 },
     },
     {
       name: 'Mage',
-      modifiers: { intelligence: +5, speed: +3, accuracy: +2 },
+      stats: { strength: 0, agility: 1, intelligence: 2},
     },
       {
-      name: 'Shaman',
-      modifiers: { endurance: +3, intelligence: +3, strength: +3, speed: +1 },
+      name: 'Cleric',
+      stats: { strength: 1, agility: 0, intelligence: 2},
+    },
+      {
+      name: 'Adventurer',
+      stats: { strength: 1, agility: 1, intelligence: 1},
+    },  {
+      name: 'Warrior',
+      stats: { strength: 2, agility: 1, intelligence: 0},
+    },
+      {
+      name: 'Hunter',
+      stats: { strength: 0, agility: 2, intelligence: 1},
     }
+  ];
+
+  export const NAMES = [
+    { name: 'Jeff', stats: { strength: 1, agility: 0, intelligence: 0 } },   
+    { name: 'Pogi', stats: { strength: 1, agility: 0, intelligence: 0 } }, 
+    { name: 'Yaniv', stats: { strength: 1, agility: 0, intelligence: 0 } }, 
+    { name: 'Joko', stats: { strength: 0, agility: 1, intelligence: 0 } }, 
+    { name: 'Gunter', stats: { strength: 0, agility: 1, intelligence: 0 } }, 
+    { name: 'Speedy', stats: { strength: 0, agility: 1, intelligence: 0 } }, 
+    { name: 'Nusbbel', stats: { strength: 0, agility: 0, intelligence: 1 } }, 
+    { name: 'Kiara', stats: { strength: 0, agility: 0, intelligence: 1 } }, 
+    { name: 'Jakiro', stats: { strength: 0, agility: 0, intelligence: 1 } }, 
   ];

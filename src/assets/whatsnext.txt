@@ -6,3 +6,6 @@ conncet the name to a google sheets (throgth forms if needed) like i did with se
 add losgic to the google sheet to only show the top 10 players and only b riching score above them the new user can be reocrded
 add a nice green pop up text that disapear after 1 sec, it pops everythime the player chose correctly and every time the text indx will corespond to this array of strings in order of "nice!"/"good bet"/"not bad at all kid"/"your so lucky"/"your soooo lucky"/"ok no way you get next one"/"brooooo"/"broooooooo!"/"you hacking"/"absolutly no way, you sir are real legand"
 add better balance make one class for every race to the strongest and equal to the other strongest race+class combos and 50-50% of winning eachother (khajit-thief, elf-mage, orc-shaman, human-warrior)
+
+
+download co pilot extention

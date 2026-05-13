@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Hero } from '../_models/Hero';
-import { CLASSES, RACES } from '../_services/hero-data.service';
+import { Hero, Stats } from '../_models/Hero';
+import { STAT_KEYS, CLASSES, RACES, NAMES } from '../_services/hero-data.service';
 import { WinDialogComponent } from '../win-dialog/win-dialog.component';
 import { LoseDialogComponent } from '../lose-dialog/lose-dialog.component';
 
@@ -24,7 +24,7 @@ export class MiniGameComponent {
   }
 
   newGame(): void {
-    this.gold = 50;
+    this.gold = 100;
     this.battleLog = [];
     this.winnerIndex = null;
     this.betOn = null;
@@ -32,21 +32,51 @@ export class MiniGameComponent {
     this.hero2 = this.generateHero();
   }
 
-  generateHero(): Hero {
+  generateHero(forbiddenName?: string): Hero {
     const race = RACES[Math.floor(Math.random() * RACES.length)];
     const cls = CLASSES[Math.floor(Math.random() * CLASSES.length)];
+    let nameEntry = NAMES[Math.floor(Math.random() * NAMES.length)];
+    while (nameEntry.name === forbiddenName) {
+        nameEntry = NAMES[Math.floor(Math.random() * NAMES.length)];
+    }
     const portrait = race.portraits[Math.floor(Math.random() * race.portraits.length)];
 
-    const stats = { ...race.stats };
-    for (const key in cls.modifiers) {
-      (stats as any)[key] += (cls.modifiers as any)[key];
-    }
-
+    const stat = this.combineStats(race.stats, cls.stats, nameEntry.stats);
     return {
       race: race.name,
       class: cls.name,
-      stats,
+      name: nameEntry.name,
+      stats: stat ,
       portrait,
+    };
+  }
+
+  getHeroTitle(hero: Hero): string {
+    return `${hero.name} the ${hero.race} ${hero.class}`;
+  }
+
+  getHighestStatKey(stats: Stats): keyof Stats { 
+    let highestKey: keyof Stats = 'strength';
+    let highestValue = stats.strength;
+
+    if (stats.agility > highestValue) {
+      highestKey = 'agility';
+      highestValue = stats.agility;
+    } 
+
+    if (stats.intelligence > highestValue) {
+      highestKey = 'intelligence';
+      highestValue = stats.intelligence;
+    }
+
+    return highestKey;
+  }
+
+  combineStats(racestat: Stats, clsstat: Stats, namestat: Stats): Stats {
+    return {
+      strength: racestat.strength + clsstat.strength + namestat.strength,
+      agility: racestat.agility + clsstat.agility + namestat.agility,
+      intelligence: racestat.intelligence + clsstat.intelligence + namestat.intelligence,
     };
   }
 
@@ -56,8 +86,8 @@ export class MiniGameComponent {
     } else if (this.winnerIndex === 1) {
       this.hero1 = this.generateHero(); // Loser is replaced
     } else {
-      this.hero1 = this.generateHero();
-      this.hero2 = this.generateHero();
+     this.hero1 = this.generateHero();
+     this.hero2 = this.generateHero(this.hero1.name); // Ensure different names for both heroes
     }
 
     this.winnerIndex = null;
@@ -69,16 +99,56 @@ export class MiniGameComponent {
     this.betOn = index;
   }
 
+  giveRandomBoost(hero1Value: number, hero2Value: number, hero1Key: keyof Stats, hero2Key: keyof Stats): [number, number] {
+
+    if (Math.random() < 0.5) {
+      hero1Value++;
+    } else {
+      hero2Value++;
+    }
+
+    return [hero1Value, hero2Value];
+}
   battle(): void {
-    const h1 = this.hero1.stats;
-    const h2 = this.hero2.stats;
+    const hero1Key = this.getHighestStatKey(this.hero1.stats);
+    const hero2Key = this.getHighestStatKey(this.hero2.stats);
 
-    const power1 = h1.strength + h1.accuracy + h1.speed + h1.intelligence;
-    const power2 = h2.strength + h2.accuracy + h2.speed + h2.intelligence;
+    let hero1Value = this.hero1.stats[hero1Key];
+    let hero2Value = this.hero2.stats[hero2Key];
+     // First random boost
+  [hero1Value, hero2Value] = this.giveRandomBoost(
+    hero1Value,
+    hero2Value,
+    hero1Key,
+    hero2Key
+  );
+   // If still tied, boost once again
+    if (hero1Value === hero2Value) {
+        [hero1Value, hero2Value] = this.giveRandomBoost(
+          hero1Value,
+          hero2Value,
+          hero1Key,
+          hero2Key
+        );  
+    }
+    let result: 0 | 1;
+    if (hero1Value > hero2Value) {
+      result = 0;
+    } else if (hero2Value > hero1Value) {
+      result = 1;
+    } else {
+      const extraBoostIndex = Math.random() < 0.5 ? 0 : 1;
+      if (extraBoostIndex === 0) {
+        hero1Value += 1;
+        this.battleLog.push(`Tie! Hero 1 gets an extra +1 to ${hero1Key}`);
+      } else {
+        hero2Value += 1;
+        this.battleLog.push(`Tie! Hero 2 gets an extra +1 to ${hero2Key}`);
+      }
+      result = hero1Value >= hero2Value ? 0 : 1;
+    }
 
-    const result = power1 + Math.random() * 10 > power2 + Math.random() * 10 ? 0 : 1;
     this.winnerIndex = result;
-
     this.battleLog.push(`Battle ended! Winner is Hero ${result + 1}`);
 
     if (this.betOn !== null) {
@@ -106,5 +176,4 @@ export class MiniGameComponent {
       // 👇 Automatically replace loser with a new hero
       this.generateHeroes();
     }
-  }
-}
+  }}

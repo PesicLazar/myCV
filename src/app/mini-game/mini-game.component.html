@@ -11,27 +11,41 @@
   <div
     fxLayout="row"
     fxLayoutAlign="space-around center"
-    style="width: 100%; margin: 1rem 0"
+    class="hero-row"
   >
     <div
+      class="hero-card"
+      [class.selected-hero]="betOn === 0"
       (click)="placeBet(0)"
-      [style.border]="betOn === 0 ? '2px solid gold' : ''"
     >
-      <img [src]="hero1.portrait" alt="Hero 1" style="width: 150px" />
-      <p>{{ hero1.race }} {{ hero1.class }}</p>
+      <img [src]="hero1.portrait" alt="Hero 1" />
+      <p class="hero-title">{{ getHeroTitle(hero1) }}</p>
+      <div class="hero-stats">
+        <span class="stat stat-str">STR: {{ hero1.stats.strength }}</span>
+        <span class="stat stat-agl">AGL: {{ hero1.stats.agility }}</span>
+        <span class="stat stat-int">INT: {{ hero1.stats.intelligence }}</span>
+      </div>
     </div>
-    <div fxLayout="column" fxLayoutAlign="center center">
+
+    <div fxLayout="column" fxLayoutAlign="center center" class="battle-column">
       <span style="font-size: 2rem">⚔️</span>
       <button class="battlebutton" mat-button color="warn" (click)="battle()">
         Battle
       </button>
     </div>
+
     <div
+      class="hero-card"
+      [class.selected-hero]="betOn === 1"
       (click)="placeBet(1)"
-      [style.border]="betOn === 1 ? '2px solid gold' : ''"
     >
-      <img [src]="hero2.portrait" alt="Hero 2" style="width: 150px" />
-      <p>{{ hero2.race }} {{ hero2.class }}</p>
+      <img [src]="hero2.portrait" alt="Hero 2" />
+      <p class="hero-title">{{ getHeroTitle(hero2) }}</p>
+      <div class="hero-stats">
+        <span class="stat stat-str">STR: {{ hero2.stats.strength }}</span>
+        <span class="stat stat-agl">AGL: {{ hero2.stats.agility }}</span>
+        <span class="stat stat-int">INT: {{ hero2.stats.intelligence }}</span>
+      </div>
     </div>
   </div>
 

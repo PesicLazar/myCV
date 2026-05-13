@@ -41,13 +41,72 @@ img:hover {
 }
 
 /* Ensure the whole hero card grows on hover, not just the image */
-div[style*="border"] {
+.hero-card {
   transition: transform 0.3s ease;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  width: 230px;
+  min-width: 230px;
+  max-width: 230px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
 }
 
-div[style*="border"]:hover {
-  transform: scale(1.05);
+.hero-card:hover {
+  transform: scale(1.03);
+}
+
+.hero-row {
+  width: 100%;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
+
+.hero-title {
+  margin: 0;
+  font-weight: 600;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.stat {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-str {
+  color: #ff5252;
+  background: rgba(255, 82, 82, 0.18);
+}
+
+.stat-agl {
+  color: #64dd17;
+  background: rgba(100, 221, 23, 0.16);
+}
+
+.stat-int {
+  color: #448aff;
+  background: rgba(68, 138, 255, 0.16);
+}
+
+.battle-column {
+  margin: 0 1rem;
 }
 
 /* Selection border that matches scale on hover */
@@ -55,7 +114,6 @@ div[style*="border"]:hover {
   border: 3px solid gold;
   border-radius: 12px;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
 }
 
 /* Battle button styling */
